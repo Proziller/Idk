@@ -19,11 +19,11 @@ def generate(amount):
 
         randpos1 = random.randint(0,9)
         randpos2 = random.randint(0,9)
-        str(randnum) = random.randint(0,9)
+        randnum = random.randint(0,9)
 
         if map[randpos1][randpos2][1] != True:
             map[randpos1][randpos2][1] = True
-            map[randpos1][randpos2][0] = randnum
+            map[randpos1][randpos2][0] = str(randnum)
 
         else:
             while map[randpos1][randpos2][1] == True:
@@ -31,7 +31,7 @@ def generate(amount):
                 randpos2 = random.randint(0,9)
 
             map[randpos1][randpos2][1] = True
-            map[randpos1][randpos2][0] = randnum
+            map[randpos1][randpos2][0] = str(randnum)
 
         print(map[randpos1][randpos2])
 
