@@ -14,20 +14,26 @@ map = [
     [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]]
 ]
 
-def generate(int(amount)):
-    for amount in range:
+def generate():
+    for 10 in range:
 
         randpos1 = random.randint(0,9)
         randpos2 = random.randint(0,9)
-    
+        str(randnum) = random.randint(0,9)
+
         if map[randpos1][randpos2][1] != True:
             map[randpos1][randpos2][1] = True
+            map[randpos1][randpos2][0] = randnum
+
         else:
             while map[randpos1][randpos2][1] == True:
                 randpos1 = random.randint(0,9)
                 randpos2 = random.randint(0,9)
 
             map[randpos1][randpos2][1] = True
+            map[randpos1][randpos2][0] = randnum
+
+        print(map[randpos1][randpos2])
 
 
 def mark():
@@ -57,8 +63,6 @@ def mark():
             print("error")
     else:
         print("error")
-
-generate(10)
 
 #mark()
 
