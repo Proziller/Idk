@@ -1,5 +1,7 @@
 #!/bin/python3
 
+import random
+
 map = [
     [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
     [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
@@ -11,6 +13,23 @@ map = [
     [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
     [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]]
 ]
+
+def generate(amount):
+    for amount in range:
+
+        randpos1 = random.randint(0,9)
+        randpos2 = random.randint(0,9)
+    
+        if map[randpos1][randpos2][1] != True:
+            map[randpos1][randpos2][1] = True
+        else:
+            while map[randpos1][randpos2][1] == True:
+                randpos1 = random.randint(0,9)
+                randpos2 = random.randint(0,9)
+
+            map[randpos1][randpos2][1] = True
+
+
 def mark():
     zahlen = ["1","2","3","4","5","6","7","8","9"]
 
@@ -38,6 +57,10 @@ def mark():
             print("error")
     else:
         print("error")
+
+generate(10)
+
+#mark()
 
 #print(map1)
 #print(map2)
