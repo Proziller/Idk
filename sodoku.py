@@ -6,7 +6,7 @@ map1 = [
 ]
 map2 = [
     [["Hello",False],["world",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
-    [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
+    [[" ",False],["2nd row 2nd column",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
     [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
     [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
     [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
@@ -36,6 +36,6 @@ print(map1)
 print(map2)
 
 print(map1[0][0])
-print(map2[0][0])
+print("pos1: ", pos1, "pos2: ", pos2, "map2[0][0]:\n", map2[0][0])
 
 print(map2[pos1][pos2])
