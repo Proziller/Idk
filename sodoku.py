@@ -15,7 +15,7 @@ map = [
 ]
 
 def generate(amount):
-    for amount in range:
+    for int(amount) in range:
 
         randpos1 = random.randint(0,9)
         randpos2 = random.randint(0,9)
