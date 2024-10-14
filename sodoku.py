@@ -49,8 +49,8 @@ def generate(amount):
             map[randpos1][randpos2][1] = True
             map[randpos1][randpos2][0] = str(randnum)
 
-        print("pos1: ",pos1)
-        print("pos2: ",pos2)
+        print("pos1: ",randpos1)
+        print("pos2: ",randpos2)
         print(map[randpos1][randpos2])
 
 
