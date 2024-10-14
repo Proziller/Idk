@@ -14,8 +14,8 @@ map = [
     [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]]
 ]
 
-def generate():
-    for 10 in range:
+def generate(amount):
+    for i in range(amount):
 
         randpos1 = random.randint(0,9)
         randpos2 = random.randint(0,9)
