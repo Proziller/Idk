@@ -38,4 +38,4 @@ print(map2)
 print(map1[0][0])
 print(map2[0][0])
 
-print(map2[pos1][pos2][0])
+print(map2[pos1][pos2])
