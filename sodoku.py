@@ -1,7 +1,7 @@
 #!/bin/python3
 
 map1 = [
-    [{"zahl": "", "writable": False},{"zahl": "", "writable": False}],
+    [{"zahl": "Hello", "writable": False},{"zahl": "world", "writable": False}],
     [{"zahl": "", "writable": False},{"zahl": "", "writable": False}],
 ]
 map2 = [
@@ -34,5 +34,8 @@ else:
 
 print(map1)
 print(map2)
+
+print(map1[0][0])
+print(map2[0][0])
 
 print(map2[pos1][pos2][0])
