@@ -33,9 +33,9 @@ def generate(amount):
 
     for i in range(amount):
 
-        randpos1 = random.randint(0,9)
-        randpos2 = random.randint(0,9)
-        randnum = random.randint(0,9)
+        randpos1 = random.randint(0,8)
+        randpos2 = random.randint(0,8)
+        randnum = random.randint(0,8)
 
         if map[randpos1][randpos2][1] != True:
             map[randpos1][randpos2][1] = True
@@ -43,12 +43,14 @@ def generate(amount):
 
         else:
             while map[randpos1][randpos2][1] == True:
-                randpos1 = random.randint(0,9)
-                randpos2 = random.randint(0,9)
+                randpos1 = random.randint(0,8)
+                randpos2 = random.randint(0,8)
 
             map[randpos1][randpos2][1] = True
             map[randpos1][randpos2][0] = str(randnum)
 
+        print("pos1: ",pos1)
+        print("pos2: ",pos2)
         print(map[randpos1][randpos2])
 
 
