@@ -6,14 +6,14 @@ map1 = [
 ]
 map2 = [
     [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
-    [[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false]],
-    [[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false]],
-    [[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false]],
-    [[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false]],
-    [[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false]],
-    [[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false]],
-    [[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false]],
-    [[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false],[" ",false]]
+    [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
+    [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
+    [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
+    [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
+    [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
+    [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
+    [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
+    [[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]]
 ]
 zahlen = ["1","2","3","4","5","6","7","8","9"]
 
