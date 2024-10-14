@@ -16,7 +16,22 @@ class SoMap():
         ]
 
         self.difficulty = int(difficulty)
+    #=============================================================================================================================
+    
+    def check_box(self):
+        mistakes = 0
+        for pos1 in range(9):
+            for entry in range(9):
+                for pos2 in range(9):
+                    if self.map[pos1][pos2][0] == str(entry+1):
+                        mistakes += 1
 
+            if mistakes >= 2:
+                print("mistake")
+
+
+    #def check_row(self)
+        
     #=============================================================================================================================
 
     def print_map(self):
@@ -35,29 +50,21 @@ class SoMap():
     #=============================================================================================================================
 
     #TODO: revisit after doing check -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    def generate(self,difficulty):
+    def generate(self):
 
-        for i in range(difficulty):
+        for pos1 in range(9):
 
-            randpos1 = random.randint(0,8)
-            randpos2 = random.randint(0,8)
-            randnum = random.randint(1,9)
+            
 
-            if self.map[randpos1][randpos2][1] != True:
-                self.map[randpos1][randpos2][1] = True
-                self.map[randpos1][randpos2][0] = str(randnum)
+            for i in range(9):
+                randpos2 = random.randint(0,8)
 
-            else:
-                while self.map[randpos1][randpos2][1] == True:
-                    randpos1 = random.randint(0,8)
+                while self.map[pos1][randpos2][0] != "□":
                     randpos2 = random.randint(0,8)
 
-                self.map[randpos1][randpos2][1] = True
-                self.map[randpos1][randpos2][0] = str(randnum)
+                self.map[pos1][randpos2][0] = i+1
+            
 
-            print("pos1: ",randpos1)
-            print("pos2: ",randpos2)
-            print(self.map[randpos1][randpos2])
 
     #=============================================================================================================================
 
