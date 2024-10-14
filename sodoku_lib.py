@@ -2,7 +2,7 @@ import random
 
 class SoMap():
 
-    def __init__(self):
+    def __init__(self, difficulty):
         self.map = [
         [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
         [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
@@ -13,8 +13,11 @@ class SoMap():
         [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
         [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
         [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]]
-        ]   
+        ]
 
+        self.difficulty = int(difficulty)
+
+    #=============================================================================================================================
 
     def print_map(self):
         print(self.map[6][6][0],self.map[6][7][0],self.map[6][8][0],"|",self.map[7][6][0],self.map[7][7][0],self.map[7][8][0],"|",self.map[8][6][0],self.map[8][7][0],self.map[8][8][0])
@@ -29,10 +32,12 @@ class SoMap():
         print(self.map[0][3][0],self.map[0][4][0],self.map[0][5][0],"|",self.map[1][3][0],self.map[1][4][0],self.map[1][5][0],"|",self.map[2][3][0],self.map[2][4][0],self.map[2][5][0])
         print(self.map[0][0][0],self.map[0][1][0],self.map[0][2][0],"|",self.map[1][0][0],self.map[1][1][0],self.map[1][2][0],"|",self.map[2][0][0],self.map[2][1][0],self.map[2][2][0])
 
-    #TODO: revisit after doing check
-    def generate(self,amount):
+    #=============================================================================================================================
 
-        for i in range(amount):
+    #TODO: revisit after doing check -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    def generate(self,difficulty):
+
+        for i in range(difficulty):
 
             randpos1 = random.randint(0,8)
             randpos2 = random.randint(0,8)
@@ -54,6 +59,7 @@ class SoMap():
             print("pos2: ",randpos2)
             print(self.map[randpos1][randpos2])
 
+    #=============================================================================================================================
 
     def mark(self):
         zahlen = ["1","2","3","4","5","6","7","8","9"]
@@ -82,3 +88,5 @@ class SoMap():
                 print("error")
         else:
             print("error")
+
+    #=============================================================================================================================
