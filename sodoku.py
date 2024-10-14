@@ -1,6 +1,5 @@
 #!/bin/python3
 
-]
 map = [
     [["Hello",False],["world",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
     [[" ",False],["2nd row 2nd column",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False],[" ",False]],
