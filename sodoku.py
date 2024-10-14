@@ -32,4 +32,7 @@ if pos2 in zahlen:
 else:
     print("error")
 
+print(map1)
+print(map2)
+
 print(map2[pos1][pos2][0])
