@@ -27,7 +27,7 @@ else:
     print("error")
 
 if pos2 in zahlen:
-    pos2 = int(pos1)
+    pos2 = int(pos2)
     pos2 -= 1
 else:
     print("error")
