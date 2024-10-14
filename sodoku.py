@@ -22,11 +22,13 @@ pos2 = input("pos2: ")
 
 if pos1 in zahlen:
     pos1 = int(pos1)
+    pos1 -= 1
 else:
     print("error")
 
 if pos2 in zahlen:
     pos2 = int(pos1)
+    pos2 -= 1
 else:
     print("error")
 
