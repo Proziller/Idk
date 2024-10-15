@@ -15,37 +15,21 @@ class SoMap():
         [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]]
         ]
 
-        self.playmap
+        self.playmap = []
 
         self.difficulty = int(difficulty)
         
     #=============================================================================================================================
 
     def print_map(self):
-
-        Vcounter = 0
-
-        for pos1 in range(9):
-
-            print("")
-
-            if Vcounter == 3:
-                Vcounter = 0
-                print("------+-------+------")
-
-            Vcounter += 1
-
-            Hcounter = 0
-            for pos2 in range(9):
-
-                if Hcounter == 3:
-                    Hcounter = 0
-                    print("|","", end = "")
-
-                print(self.xymap[pos1][pos2][0],"", end = "")
-
-                Hcounter += 1
-            
+        for pos1mod in range(3):
+            for pos2mod in range(3):
+                for pos1 in range(3):
+                    for pos2 in range(3):
+                        print("",self.playmap[pos1mod*3+pos1][pos2mod*3+pos2][0],end="")
+                    print("","|",end="")
+                print("")
+            print("-------+-------+-------+")
 
     #=============================================================================================================================
 
@@ -109,12 +93,38 @@ class SoMap():
                             self.xymap[pos1][pos2][0] = randnum
                         else:
                             retry = True
-            self.playmap = self.xymap
-        self.playmap = self.xymap
-        for i in range(self.difficulty):
-            while ok = True
+        
+        self.playmap = [
+            [self.xymap[8][0],self.xymap[8][1],self.xymap[8][2],self.xymap[7][0],self.xymap[7][1],self.xymap[7][2],self.xymap[6][0],self.xymap[6][1],self.xymap[6][2]],
+            [self.xymap[8][3],self.xymap[8][4],self.xymap[8][5],self.xymap[7][3],self.xymap[7][4],self.xymap[7][5],self.xymap[6][3],self.xymap[6][4],self.xymap[6][5]],
+            [self.xymap[8][6],self.xymap[8][7],self.xymap[8][8],self.xymap[7][6],self.xymap[7][7],self.xymap[7][8],self.xymap[6][6],self.xymap[6][7],self.xymap[6][8]],
+            [self.xymap[5][0],self.xymap[5][1],self.xymap[5][2],self.xymap[4][0],self.xymap[4][1],self.xymap[4][2],self.xymap[3][0],self.xymap[3][1],self.xymap[3][2]],
+            [self.xymap[5][3],self.xymap[5][4],self.xymap[5][5],self.xymap[4][3],self.xymap[4][4],self.xymap[4][5],self.xymap[3][3],self.xymap[3][4],self.xymap[3][5]],
+            [self.xymap[5][6],self.xymap[5][7],self.xymap[5][8],self.xymap[4][6],self.xymap[4][7],self.xymap[4][8],self.xymap[3][6],self.xymap[3][7],self.xymap[3][8]],
+            [self.xymap[2][0],self.xymap[2][1],self.xymap[2][2],self.xymap[1][0],self.xymap[1][1],self.xymap[1][2],self.xymap[0][0],self.xymap[0][1],self.xymap[0][2]],
+            [self.xymap[2][3],self.xymap[2][4],self.xymap[2][5],self.xymap[1][3],self.xymap[1][4],self.xymap[1][5],self.xymap[0][3],self.xymap[0][4],self.xymap[0][5]],
+            [self.xymap[2][6],self.xymap[2][7],self.xymap[2][8],self.xymap[1][6],self.xymap[1][7],self.xymap[1][8],self.xymap[0][6],self.xymap[0][7],self.xymap[0][8]],
+        ]
+        for i in range(81-self.difficulty):
+
             pos1 = random.randint(0,8)
             pos2 = random.randint(0,8)
 
+            while self.playmap[pos1][pos2][0] == "□":
+                pos1 = random.randint(0,8)
+                pos2 = random.randint(0,8)
+
+            self.playmap[pos1][pos2] = ["□",True]
 
     #=============================================================================================================================
+
+    def mark(self):
+        valnum = [1,2,3,4,5,6,7,8,9]
+
+        pos1 = input()
+        if pos1 in valnum:
+            pos2 = input()
+            if pos2 in valnum:
+                num = input()
+                if self.playmap[pos1][pos2][1] == True:
+                    self.playmap[pos1][pos2][0] = num
