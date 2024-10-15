@@ -66,34 +66,38 @@ class SoMap():
                     if retry != True:
 
                         Hcounter = 0
-                        Hnums = [1,2,3,4,5,6,7,8,9,"□"]
+                        Hnums = [1,2,3,4,5,6,7,8,9]
 
                         while pos1-Hcounter > 0:
+                            Hcounter += 1
                             checkpos1 = pos1-Hcounter
                             Hnums.remove(self.xymap[checkpos1][pos2][0])
-                            Hcounter += 1
+                            print(self.xymap[checkpos1][pos2][0])
+                        
 
                         randnum = random.randint(1,9)
+
+                        print("-~=",pos1+1,pos2+1,"=~-")
+                        print(Hcounter,":",pos1)
 
                         q = 0
                         for i in range(len(Hnums)):
                             if Hnums[i] in Vnums:
+                                print(Hnums[i],"; ",end="")
                                 q += 1
+                        print("")
 
                         if q > 0:
 
                             while randnum not in Vnums or randnum not in Hnums:
                                 randnum = random.randint(1,9)
 
-                            Hnums.remove(randnum)
                             Vnums.remove(randnum)
 
                             self.xymap[pos1][pos2][0] = randnum
                         else:
                             retry = True
             
-            print("")
-            print("=========================")
             
             Vcounter = 0
 
@@ -117,5 +121,9 @@ class SoMap():
                     print(self.xymap[qpos1][qpos2][0],"", end = "")
 
                     qHcounter += 1
+            print("")
+            print("")
+            print("=================================")
+            print("")
 
     #=============================================================================================================================
