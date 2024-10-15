@@ -57,11 +57,32 @@ class SoMap():
             for i in range(9):
                 self.xymap.append([["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]])
 
+            boxes = [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9]]
+            box = 0
+
             for pos1 in range(9):
 
                 Vnums = [1,2,3,4,5,6,7,8,9,"□"]
 
                 for pos2 in range(9):
+                    if pos1 <=2 and pos2 <=2:
+                        box = 1
+                    elif pos1 <=2 and pos2 <=5:
+                        box = 1
+                    elif pos1 <=2 and pos2 <=8:
+                        box = 1
+                    elif pos1 <=5 and pos2 <=2:
+                        box = 1
+                    elif pos1 <=5 and pos2 <=5:
+                        box = 1
+                    elif pos1 <=5 and pos2 <=8:
+                        box = 1
+                    elif pos1 <=8 and pos2 <=2:
+                        box = 1
+                    elif pos1 <=8 and pos2 <=5:
+                        box = 1
+                    elif pos1 <=8 and pos2 <=8:
+                        box = 1
 
                     if retry != True:
 
@@ -72,21 +93,14 @@ class SoMap():
                             Hcounter += 1
                             checkpos1 = pos1-Hcounter
                             Hnums.remove(self.xymap[checkpos1][pos2][0])
-                            print(self.xymap[checkpos1][pos2][0])
                         
 
                         randnum = random.randint(1,9)
 
-                        print("-~=",pos1+1,pos2+1,"=~-")
-                        print(Hcounter,":",pos1)
-
                         q = 0
                         for i in range(len(Hnums)):
                             if Hnums[i] in Vnums:
-                                print(Hnums[i],"; ",end="")
                                 q += 1
-                        print("")
-
                         if q > 0:
 
                             while randnum not in Vnums or randnum not in Hnums:
