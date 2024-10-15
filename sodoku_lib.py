@@ -15,6 +15,8 @@ class SoMap():
         [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]]
         ]
 
+        self.playmap
+
         self.difficulty = int(difficulty)
         
     #=============================================================================================================================
@@ -107,5 +109,12 @@ class SoMap():
                             self.xymap[pos1][pos2][0] = randnum
                         else:
                             retry = True
+            self.playmap = self.xymap
+        self.playmap = self.xymap
+        for i in range(self.difficulty):
+            while ok = True
+            pos1 = random.randint(0,8)
+            pos2 = random.randint(0,8)
+
 
     #=============================================================================================================================
