@@ -3,97 +3,103 @@ import random
 class SoMap():
 
     def __init__(self, difficulty):
-        self.map = [
-        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]]
+        self.xymap = [
+        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]]
         ]
 
         self.difficulty = int(difficulty)
-    #=============================================================================================================================
-    
-    def check_box(self):
-        mistakes = 0
-        for pos1 in range(9):
-            for entry in range(9):
-                for pos2 in range(9):
-                    if self.map[pos1][pos2][0] == str(entry+1):
-                        mistakes += 1
-
-            if mistakes >= 2:
-                print("mistake")
-
-
-    #def check_row(self)
         
     #=============================================================================================================================
 
     def print_map(self):
-        print(self.map[6][6][0],self.map[6][7][0],self.map[6][8][0],"|",self.map[7][6][0],self.map[7][7][0],self.map[7][8][0],"|",self.map[8][6][0],self.map[8][7][0],self.map[8][8][0])
-        print(self.map[6][3][0],self.map[6][4][0],self.map[6][5][0],"|",self.map[7][3][0],self.map[7][4][0],self.map[7][5][0],"|",self.map[8][3][0],self.map[8][4][0],self.map[8][5][0])
-        print(self.map[6][0][0],self.map[6][1][0],self.map[6][2][0],"|",self.map[7][0][0],self.map[7][1][0],self.map[7][2][0],"|",self.map[8][0][0],self.map[8][1][0],self.map[8][2][0])
-        print("---------------------")
-        print(self.map[3][6][0],self.map[3][7][0],self.map[3][8][0],"|",self.map[4][6][0],self.map[4][7][0],self.map[4][8][0],"|",self.map[5][6][0],self.map[5][7][0],self.map[5][8][0])
-        print(self.map[3][3][0],self.map[3][4][0],self.map[3][5][0],"|",self.map[4][3][0],self.map[4][4][0],self.map[4][5][0],"|",self.map[5][3][0],self.map[5][4][0],self.map[5][5][0])
-        print(self.map[3][0][0],self.map[3][1][0],self.map[3][2][0],"|",self.map[4][0][0],self.map[4][1][0],self.map[4][2][0],"|",self.map[5][0][0],self.map[5][1][0],self.map[5][2][0])
-        print("---------------------")
-        print(self.map[0][6][0],self.map[0][7][0],self.map[0][8][0],"|",self.map[1][6][0],self.map[1][7][0],self.map[1][8][0],"|",self.map[2][6][0],self.map[2][7][0],self.map[2][8][0])
-        print(self.map[0][3][0],self.map[0][4][0],self.map[0][5][0],"|",self.map[1][3][0],self.map[1][4][0],self.map[1][5][0],"|",self.map[2][3][0],self.map[2][4][0],self.map[2][5][0])
-        print(self.map[0][0][0],self.map[0][1][0],self.map[0][2][0],"|",self.map[1][0][0],self.map[1][1][0],self.map[1][2][0],"|",self.map[2][0][0],self.map[2][1][0],self.map[2][2][0])
 
-    #=============================================================================================================================
-
-    #TODO: revisit after doing check -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-    def generate(self):
+        Vcounter = 0
 
         for pos1 in range(9):
 
+            print("")
+
+            if Vcounter == 3:
+                Vcounter = 0
+                print("------+-------+------")
+
+            Vcounter += 1
+
+            Hcounter = 0
+            for pos2 in range(9):
+
+                if Hcounter == 3:
+                    Hcounter = 0
+                    print("|","", end = "")
+
+                print(self.xymap[pos1][pos2][0],"", end = "")
+
+                Hcounter += 1
             
-
-            for i in range(9):
-                randpos2 = random.randint(0,8)
-
-                while self.map[pos1][randpos2][0] != "□":
-                    randpos2 = random.randint(0,8)
-
-                self.map[pos1][randpos2][0] = i+1
-            
-
 
     #=============================================================================================================================
 
-    def mark(self):
-        zahlen = ["1","2","3","4","5","6","7","8","9"]
+    def generate(self):
+        retry = True
 
-        pos1 = input("pos1: ")
+        while retry == True:
+            print("BOOSH")
+            retry = False
 
-        if pos1 in zahlen:
-            pos1 = int(pos1)
-            pos1 -= 1
+            self.xymap = [
+            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
+            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]]
+            ]
+        
+            nums = [1,2,3,4,5,6,7,8,9]
+            for pos1 in range(9):
+                Vcheck = []
+                for pos2 in range(9):
 
-            pos2 = input("pos2: ")
+                    Hcounter = 0
+                    Hcheck = []
 
-            if pos2 in zahlen:
-                pos2 = int(pos2)
-                pos2 -= 1
-                if self.map[pos1][pos2][1] == False:
-                    new_num = input("new entry")
+                    while pos1-Hcounter >= 0:
+                        checkpos1 = pos1-Hcounter
+                        Hcheck.append(self.xymap[checkpos1][pos2][0])
+                        Hcounter += 1
 
-                    if new_num in zahlen:
-                        self.map[pos1][pos2][0] = new_num
-                    else:
-                        print("error")
-                else:
-                    print("already occupied")
-            else:
-                print("error")
-        else:
-            print("error")
+                    randnum = random.choice(nums)
+
+                    if 1 not in Vcheck or 1 not in Hcheck:
+                        if 2 not in Vcheck or 2 not in Hcheck:
+                            if 3 not in Vcheck or 3 not in Hcheck:
+                                if 4 not in Vcheck or 4 not in Hcheck:
+                                    if 5 not in Vcheck or 5 not in Hcheck:
+                                        if 6 not in Vcheck or 6 not in Hcheck:
+                                            if 7 not in Vcheck or 7 not in Hcheck:
+                                                if 8 not in Vcheck or 8 not in Hcheck:
+                                                    if 9 not in Vcheck or 9 not in Hcheck:
+                                                        while randnum in Vcheck or randnum in Hcheck:
+                                                            randnum = random.choice(nums)
+                                                        
+                                                        Vcheck.append(randnum)
+                                                        self.xymap[pos1][pos2][0] = randnum
+
+                                                    else:
+                                                        retry = True  
+                 
+                
+                
 
     #=============================================================================================================================
