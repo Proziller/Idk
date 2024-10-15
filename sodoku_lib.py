@@ -107,37 +107,5 @@ class SoMap():
                             self.xymap[pos1][pos2][0] = randnum
                         else:
                             retry = True
-            
-            
-            Vcounter = 0
-
-            for qpos1 in range(9):
-
-                print("")
-
-                if Vcounter == 3:
-                    Vcounter = 0
-                    print("------+-------+------")
-
-                Vcounter += 1
-
-                qHcounter = 0
-                for qpos2 in range(9):
-
-                    if qHcounter == 3:
-                        qHcounter = 0
-                        print("|","", end = "")
-
-                    print(self.xymap[qpos1][qpos2][0],"", end = "")
-
-                    qHcounter += 1
-            print("")
-            print("")
-            print("=================================")
-            print("")
 
     #=============================================================================================================================
-
-sodoku1 = SoMap(81)
-
-sodoku1.generate()
