@@ -22,14 +22,17 @@ class SoMap():
     #=============================================================================================================================
 
     def print_map(self):
-        for pos1mod in range(3):
-            for pos2mod in range(3):
-                for pos1 in range(3):
-                    for pos2 in range(3):
-                        print("",self.playmap[pos1mod*3+pos1][pos2mod*3+pos2][0],end="")
-                    print("","|",end="")
-                print("")
-            print("-------+-------+-------+")
+        print(self.playmap[6][6][0],self.playmap[6][7][0],self.playmap[6][8][0],"|",self.playmap[7][6][0],self.playmap[7][7][0],self.playmap[7][8][0],"|",self.playmap[8][6][0],self.playmap[8][7][0],self.playmap[8][8][0])
+        print(self.playmap[6][3][0],self.playmap[6][4][0],self.playmap[6][5][0],"|",self.playmap[7][3][0],self.playmap[7][4][0],self.playmap[7][5][0],"|",self.playmap[8][3][0],self.playmap[8][4][0],self.playmap[8][5][0])
+        print(self.playmap[6][0][0],self.playmap[6][1][0],self.playmap[6][2][0],"|",self.playmap[7][0][0],self.playmap[7][1][0],self.playmap[7][2][0],"|",self.playmap[8][0][0],self.playmap[8][1][0],self.playmap[8][2][0])
+        print("------+-------+-------")
+        print(self.playmap[3][6][0],self.playmap[3][7][0],self.playmap[3][8][0],"|",self.playmap[4][6][0],self.playmap[4][7][0],self.playmap[4][8][0],"|",self.playmap[5][6][0],self.playmap[5][7][0],self.playmap[5][8][0])
+        print(self.playmap[3][3][0],self.playmap[3][4][0],self.playmap[3][5][0],"|",self.playmap[4][3][0],self.playmap[4][4][0],self.playmap[4][5][0],"|",self.playmap[5][3][0],self.playmap[5][4][0],self.playmap[5][5][0])
+        print(self.playmap[3][0][0],self.playmap[3][1][0],self.playmap[3][2][0],"|",self.playmap[4][0][0],self.playmap[4][1][0],self.playmap[4][2][0],"|",self.playmap[5][0][0],self.playmap[5][1][0],self.playmap[5][2][0])
+        print("------+-------+-------")
+        print(self.playmap[0][6][0],self.playmap[0][7][0],self.playmap[0][8][0],"|",self.playmap[1][6][0],self.playmap[1][7][0],self.playmap[1][8][0],"|",self.playmap[2][6][0],self.playmap[2][7][0],self.playmap[2][8][0])
+        print(self.playmap[0][3][0],self.playmap[0][4][0],self.playmap[0][5][0],"|",self.playmap[1][3][0],self.playmap[1][4][0],self.playmap[1][5][0],"|",self.playmap[2][3][0],self.playmap[2][4][0],self.playmap[2][5][0])
+        print(self.playmap[0][0][0],self.playmap[0][1][0],self.playmap[0][2][0],"|",self.playmap[1][0][0],self.playmap[1][1][0],self.playmap[1][2][0],"|",self.playmap[2][0][0],self.playmap[2][1][0],self.playmap[2][2][0])
 
     #=============================================================================================================================
 
@@ -119,12 +122,22 @@ class SoMap():
     #=============================================================================================================================
 
     def mark(self):
-        valnum = [1,2,3,4,5,6,7,8,9]
+        valnum = ["1","2","3","4","5","6","7","8","9"]
 
-        pos1 = input()
+        pos1 = input("pos1:")
         if pos1 in valnum:
-            pos2 = input()
+            pos2 = input("pos2:")
             if pos2 in valnum:
-                num = input()
-                if self.playmap[pos1][pos2][1] == True:
-                    self.playmap[pos1][pos2][0] = num
+                num = input("num:")
+                if num in valnum:
+                    if self.playmap[int(pos1)-1][int(pos2)-1][1] == True:
+                        self.playmap[int(pos1)-1][int(pos2)-1][0] = num
+                        print(self.playmap[int(pos1)-1][int(pos2)-1][0])
+                    else:
+                        print("invalide position")
+                else:
+                    print("invalid num")
+            else:
+                print("invalid pos2")
+        else:
+            print("invalid pos1")
