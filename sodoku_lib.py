@@ -51,22 +51,18 @@ class SoMap():
         retry = True
         while retry == True:
 
-            self.xymap = [
-            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
-            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]]
-            ]
-
             retry = False
+
+            self.xymap.clear()
+            for i in range(9):
+                self.xymap.append([["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]])
+
             for pos1 in range(9):
+
                 Vnums = [1,2,3,4,5,6,7,8,9,"□"]
+
                 for pos2 in range(9):
+
                     if retry != True:
 
                         Hcounter = 0
@@ -83,7 +79,6 @@ class SoMap():
                         for i in range(len(Hnums)):
                             if Hnums[i] in Vnums:
                                 q += 1
-                                print(Hnums[i])
 
                         if q > 0:
 
@@ -96,6 +91,9 @@ class SoMap():
                             self.xymap[pos1][pos2][0] = randnum
                         else:
                             retry = True
+            
+            print("")
+            print("=========================")
             
             Vcounter = 0
 
@@ -120,5 +118,4 @@ class SoMap():
 
                     qHcounter += 1
 
-                print("")
     #=============================================================================================================================
