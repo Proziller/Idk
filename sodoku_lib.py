@@ -4,15 +4,15 @@ class SoMap():
 
     def __init__(self, difficulty):
         self.xymap = [
-        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-        [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]]
+        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+        [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]]
         ]
 
         self.difficulty = int(difficulty)
@@ -49,57 +49,76 @@ class SoMap():
 
     def generate(self):
         retry = True
-
         while retry == True:
-            print("BOOSH")
-            retry = False
 
             self.xymap = [
-            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]],
-            [["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False],["",False]]
+            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]],
+            [["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]]
             ]
-        
-            nums = [1,2,3,4,5,6,7,8,9]
+
+            retry = False
             for pos1 in range(9):
-                Vcheck = []
+                Vnums = [1,2,3,4,5,6,7,8,9,"□"]
                 for pos2 in range(9):
+                    if retry != True:
 
-                    Hcounter = 0
-                    Hcheck = []
+                        Hcounter = 0
+                        Hnums = [1,2,3,4,5,6,7,8,9,"□"]
 
-                    while pos1-Hcounter >= 0:
-                        checkpos1 = pos1-Hcounter
-                        Hcheck.append(self.xymap[checkpos1][pos2][0])
-                        Hcounter += 1
+                        while pos1-Hcounter > 0:
+                            checkpos1 = pos1-Hcounter
+                            Hnums.remove(self.xymap[checkpos1][pos2][0])
+                            Hcounter += 1
 
-                    randnum = random.choice(nums)
+                        randnum = random.randint(1,9)
 
-                    if 1 not in Vcheck or 1 not in Hcheck:
-                        if 2 not in Vcheck or 2 not in Hcheck:
-                            if 3 not in Vcheck or 3 not in Hcheck:
-                                if 4 not in Vcheck or 4 not in Hcheck:
-                                    if 5 not in Vcheck or 5 not in Hcheck:
-                                        if 6 not in Vcheck or 6 not in Hcheck:
-                                            if 7 not in Vcheck or 7 not in Hcheck:
-                                                if 8 not in Vcheck or 8 not in Hcheck:
-                                                    if 9 not in Vcheck or 9 not in Hcheck:
-                                                        while randnum in Vcheck or randnum in Hcheck:
-                                                            randnum = random.choice(nums)
-                                                        
-                                                        Vcheck.append(randnum)
-                                                        self.xymap[pos1][pos2][0] = randnum
+                        q = 0
+                        for i in range(len(Hnums)):
+                            if Hnums[i] in Vnums:
+                                q += 1
+                                print(Hnums[i])
 
-                                                    else:
-                                                        retry = True  
-                 
-                
-                
+                        if q > 0:
 
+                            while randnum not in Vnums or randnum not in Hnums:
+                                randnum = random.randint(1,9)
+
+                            Hnums.remove(randnum)
+                            Vnums.remove(randnum)
+
+                            self.xymap[pos1][pos2][0] = randnum
+                        else:
+                            retry = True
+            
+            Vcounter = 0
+
+            for qpos1 in range(9):
+
+                print("")
+
+                if Vcounter == 3:
+                    Vcounter = 0
+                    print("------+-------+------")
+
+                Vcounter += 1
+
+                qHcounter = 0
+                for qpos2 in range(9):
+
+                    if qHcounter == 3:
+                        qHcounter = 0
+                        print("|","", end = "")
+
+                    print(self.xymap[qpos1][qpos2][0],"", end = "")
+
+                    qHcounter += 1
+
+                print("")
     #=============================================================================================================================
