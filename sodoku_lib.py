@@ -57,55 +57,51 @@ class SoMap():
             for i in range(9):
                 self.xymap.append([["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False],["□",False]])
 
+            columns = [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9]]
             boxes = [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9]]
             box = 0
 
             for pos1 in range(9):
 
-                Vnums = [1,2,3,4,5,6,7,8,9,"□"]
+                Vnums = [1,2,3,4,5,6,7,8,9]
 
                 for pos2 in range(9):
                     if pos1 <=2 and pos2 <=2:
-                        box = 1
+                        box = 0
                     elif pos1 <=2 and pos2 <=5:
                         box = 1
                     elif pos1 <=2 and pos2 <=8:
-                        box = 1
+                        box = 2
                     elif pos1 <=5 and pos2 <=2:
-                        box = 1
+                        box = 3
                     elif pos1 <=5 and pos2 <=5:
-                        box = 1
+                        box = 4
                     elif pos1 <=5 and pos2 <=8:
-                        box = 1
+                        box = 5
                     elif pos1 <=8 and pos2 <=2:
-                        box = 1
+                        box = 6
                     elif pos1 <=8 and pos2 <=5:
-                        box = 1
+                        box = 7
                     elif pos1 <=8 and pos2 <=8:
-                        box = 1
+                        box = 8
 
                     if retry != True:
 
-                        Hcounter = 0
-                        Hnums = [1,2,3,4,5,6,7,8,9]
-
-                        while pos1-Hcounter > 0:
-                            Hcounter += 1
-                            checkpos1 = pos1-Hcounter
-                            Hnums.remove(self.xymap[checkpos1][pos2][0])
-                        
-
-                        randnum = random.randint(1,9)
-
                         q = 0
-                        for i in range(len(Hnums)):
-                            if Hnums[i] in Vnums:
+                        possibilities =[]
+                        for i in range(len(columns[pos2])):
+                            if columns[pos2][i] in Vnums and columns[pos2][i] in boxes[box]:
                                 q += 1
+                                possibilities.append(columns[pos2][i])
                         if q > 0:
+                            
+                            randnum = random.choice(possibilities)
 
-                            while randnum not in Vnums or randnum not in Hnums:
-                                randnum = random.randint(1,9)
+                            while randnum not in Vnums or randnum not in columns[pos2]:
+                                randnum = random.choice(possibilities)
 
+                            boxes[box].remove(randnum)
+                            columns[pos2].remove(randnum)
                             Vnums.remove(randnum)
 
                             self.xymap[pos1][pos2][0] = randnum
@@ -141,3 +137,7 @@ class SoMap():
             print("")
 
     #=============================================================================================================================
+
+sodoku1 = SoMap(81)
+
+sodoku1.generate()
