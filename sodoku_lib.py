@@ -108,6 +108,7 @@ class SoMap():
             [self.xymap[2][3],self.xymap[2][4],self.xymap[2][5],self.xymap[1][3],self.xymap[1][4],self.xymap[1][5],self.xymap[0][3],self.xymap[0][4],self.xymap[0][5]],
             [self.xymap[2][6],self.xymap[2][7],self.xymap[2][8],self.xymap[1][6],self.xymap[1][7],self.xymap[1][8],self.xymap[0][6],self.xymap[0][7],self.xymap[0][8]],
         ]
+        self.xymap = self.playmap
         for i in range(81-self.difficulty):
 
             pos1 = random.randint(0,8)
