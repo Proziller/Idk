@@ -1,6 +1,8 @@
 import sodoku_lib as sodoku
+print("-~==~==~==~==~==~==~-")
+difficulty = input("difficulty: ")
 
-sodoku1 = sodoku.SoMap(30)
+sodoku1 = sodoku.SoMap(difficulty)
 
 sodoku1.generate()
 while True:

@@ -18,6 +18,10 @@ class SoMap():
         self.playmap = []
 
         self.difficulty = int(difficulty)
+
+        self.mistakes = 0
+
+        self.right = self.difficulty
         
     #=============================================================================================================================
 
@@ -125,15 +129,37 @@ class SoMap():
     def mark(self):
         valnum = ["1","2","3","4","5","6","7","8","9"]
 
+        print(81-self.right,"left")
+        print(self.mistakes,"mistakes")
+        if self.right == 81:
+            print("finished")
+            exit()
+
         pos1 = input("pos1:")
         if pos1 in valnum:
+
+            print("-----")
+            print(self.playmap[int(pos1)-1][6][0],self.playmap[int(pos1)-1][7][0],self.playmap[int(pos1)-1][8][0])
+            print(self.playmap[int(pos1)-1][3][0],self.playmap[int(pos1)-1][4][0],self.playmap[int(pos1)-1][5][0])
+            print(self.playmap[int(pos1)-1][0][0],self.playmap[int(pos1)-1][1][0],self.playmap[int(pos1)-1][2][0])
+            print("-----")
+
             pos2 = input("pos2:")
             if pos2 in valnum:
+
                 num = input("num:")
                 if num in valnum:
+
                     if self.playmap[int(pos1)-1][int(pos2)-1][1] == True:
+
                         self.playmap[int(pos1)-1][int(pos2)-1][0] = num
-                        print(self.playmap[int(pos1)-1][int(pos2)-1][0])
+
+                        if num == self.xymap[int(pos1)-1][int(pos2)-1][0]:
+                            print(":)")
+                            self.right += 1
+                        else:
+                            print(":(")
+                            self.mistakes += 1
                     else:
                         print("invalide position")
                 else:
