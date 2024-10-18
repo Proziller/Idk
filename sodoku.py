@@ -4,3 +4,4 @@ sodoku1 = sodoku.SoMap(20)
 
 sodoku1.generate()
 sodoku1.play()
+sodoku1.rplay()

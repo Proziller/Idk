@@ -47,6 +47,7 @@ class SoMap():
     def set_num(self,number):
         self.chooser.config(text=number)
         self.num = number
+        print("aa")
         
     #=============================================================================================================================
 
@@ -90,6 +91,6 @@ class SoMap():
         for i in range(9):
             self.playfield.bind(str(i+1),self.set_num(i+1))
 
-        self.playfield.mainloop()
 
-    
+    def rplay(self):
+        self.playfield.mainloop()

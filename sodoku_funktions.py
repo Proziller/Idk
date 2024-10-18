@@ -22,6 +22,7 @@ def paint(target):
             flr3.grid(row=3, column=0)
         elif u == 1:
             flr4.grid(row=7, column=0)
+            
 
 def generate(xymap,):
     retry = True
