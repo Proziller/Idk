@@ -1,14 +1,16 @@
 import tkinter as tk
 
 root = tk.Tk()
-list = [1,2,3]
-# Create widgets
-list[1] = tk.Button(root, text=list[1])
-label2 = tk.Label(root, text=4)
+class q ():
+    def __init__(self):
+        self.button = tk.Button(root, text="Original Text")
+        self.button.pack()
 
-# Place widgets in the grid
-list[1].grid(row=0, column=0)
-label2.grid(row=1, column=2)
+    def change_button_text(self):
+        self.button.config(text="New Text")
 
-root.mainloop()
-print("hi")
+    def play(self):
+        self.button.config(command=self.change_button_text)
+        root.mainloop()
+
+q.play(self)
