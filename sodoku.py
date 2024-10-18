@@ -1,10 +1,7 @@
 import sodoku_lib as sodoku
-print("-~==~==~==~==~==~==~-")
-difficulty = input("difficulty: ")
+import tkinter as tk
 
-sodoku1 = sodoku.SoMap(difficulty)
+sodoku1 = sodoku.SoMap(40)
 
 sodoku1.generate()
-while True:
-    sodoku1.print_map()
-    sodoku1.mark()
+sodoku1.print_map()
